@@ -1,0 +1,53 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+var people = 10;
+var rain = 6;
+var sharks = 5;
+var fearGenerated = function ( numPeeps, rainInInches, numSharks){
+  var rainFear = numPeeps * rainInInches;
+  var sharkFear = numSharks * numSharks * numSharks;
+  var totalFear = sharkFear + rainFear;
+  return totalFear;
+};            
+            
+var numPeeps = 3;
+var rainInInches = 6;
+var numSharks = 4;
+var fear = fearGenerated(numPeeps, rainInInches, numSharks);
+var fearMessage;
+
+fearMessage = function(fear){
+  if(fear < 200){
+return "Should be no problem at all...mwahaha.\n Still wanna ride?";
+  }else if(fear > 199 && fear < 301){
+  return "Fear Level: MEDIUM\n You may want to rethink this one, man. MWAHAHA!\n Think you'll make it?";
+  }else if(fear > 301 && fear <= 400){
+  return "Fear Level: HIGH \n ABANDON ALL HOPE!! \n Have a death wish?";
+  }
+};
+
+
+
+var startRide = confirmRide(fearMessage);
+
+function confirmRide( confirmToGo ){
+  return confirmToGo();
+}
+
+
+
+</script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <h1 onclick="confirmRide(startRide);">Click me</h1>
+    </body>
+</html>
